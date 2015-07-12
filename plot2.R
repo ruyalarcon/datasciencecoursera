@@ -16,4 +16,8 @@ sub.df = subset(ini, Date >=yr1 & Date <=yr2)
 sub.df[,"Global_active_power"] <- as.numeric(sub.df[,"Global_active_power"])
 sub.df$day <- weekdays(as.Date(sub.df$Date))
 
-plot(sub.df$Global_active_power, type="l",ylab="Global Active Power (kilowatts)")
+plot(sub.df$Global_active_power, type="l",ylab="Global Active Power (kilowatts)",xlab="", xaxt='n')
+axis(1, at=1:3,labels=c("Thu","Fri","Sat"))
+
+dev.copy(png,file="plot2.png")
+dev.off()
