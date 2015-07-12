@@ -13,3 +13,5 @@ ini[,"Date"] <- as.Date(ini[,"Date"],"%d/%m/%Y")
 yr1 = as.Date("2007-02-01")
 yr2 = as.Date("2007-02-02")
 sub.df = subset(ini, Date >=yr1 & Date <=yr2)
+
+sub.df[,"Global_active_power"] <- as.numeric(sub.df[,"Global_active_power"])
